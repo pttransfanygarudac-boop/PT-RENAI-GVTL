@@ -1,0 +1,1815 @@
+/* =========================================
+   PT RENAI GVTL INDONESIA
+   STYLE.CSS VERSION 1.0
+========================================= */
+
+/* =========================================
+   CSS RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+
+:root {
+
+    --primary-bg: #050505;
+    --secondary-bg: #101010;
+    --card-bg: rgba(18, 18, 18, 0.85);
+
+    --primary-color: #00d9ff;
+    --secondary-color: #0077ff;
+
+    --text-color: #ffffff;
+    --text-secondary: #bfbfbf;
+
+    --border-color: rgba(0, 217, 255, 0.25);
+
+    --shadow-light: 0 0 10px rgba(0, 217, 255, 0.20);
+
+    --shadow-medium: 0 0 20px rgba(0, 217, 255, 0.35);
+
+    --shadow-heavy: 0 0 40px rgba(0, 217, 255, 0.50);
+
+    --border-radius: 16px;
+
+    --transition: 0.35s ease;
+
+    --container-width: 1200px;
+
+}
+
+/* =========================================
+   HTML
+========================================= */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    font-family: "Inter", sans-serif;
+
+    background: var(--primary-bg);
+
+    color: var(--text-color);
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+
+    width: 90%;
+
+    max-width: var(--container-width);
+
+    margin: auto;
+
+}
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+    transition: var(--transition);
+
+}
+
+/* =========================================
+   IMAGES
+========================================= */
+
+img {
+
+    width: 100%;
+
+    display: block;
+
+}
+
+/* =========================================
+   LIST
+========================================= */
+
+ul {
+
+    list-style: none;
+
+}
+
+/* =========================================
+   SECTION
+========================================= */
+
+section {
+
+    padding: 100px 0;
+
+    position: relative;
+
+}
+
+/* =========================================
+   SELECTION
+========================================= */
+
+::selection {
+
+    background: var(--primary-color);
+
+    color: #000;
+
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: #080808;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--primary-color);
+
+    border-radius: 50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--secondary-color);
+
+}
+
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    color: var(--text-color);
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+}
+
+h1 {
+
+    font-size: 3.5rem;
+
+}
+
+h2 {
+
+    font-size: 2.5rem;
+
+}
+
+h3 {
+
+    font-size: 1.5rem;
+
+}
+
+p {
+
+    color: var(--text-secondary);
+
+    margin-top: 15px;
+
+    font-size: 1rem;
+
+}
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+
+}
+
+.section-title span {
+
+    color: var(--primary-color);
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+.section-title h2 {
+
+    margin-top: 12px;
+
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn-primary,
+.btn-secondary {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 32px;
+
+    border-radius: var(--border-radius);
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+/* Primary Button */
+
+.btn-primary {
+
+    background: var(--primary-color);
+
+    color: #000;
+
+    box-shadow: var(--shadow-medium);
+
+}
+
+/* Secondary Button */
+
+.btn-secondary {
+
+    border: 2px solid var(--primary-color);
+
+    color: var(--primary-color);
+
+    background: transparent;
+
+}
+
+/* Hover */
+
+.btn-primary:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow-heavy);
+
+}
+
+.btn-secondary:hover {
+
+    background: var(--primary-color);
+
+    color: #000;
+
+    box-shadow: var(--shadow-heavy);
+
+}
+
+/* =========================================
+   SHIMMER EFFECT
+========================================= */
+
+.btn-primary::before,
+.btn-secondary::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -120%;
+
+    width: 60%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.8),
+        transparent
+    );
+
+    transform: skewX(-25deg);
+
+}
+
+.btn-primary:hover::before,
+.btn-secondary:hover::before {
+
+    animation: shimmer 0.9s linear;
+
+}
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.progress-bar {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0%;
+
+    height: 4px;
+
+    background: var(--primary-color);
+
+    box-shadow: var(--shadow-heavy);
+
+    z-index: 9999;
+
+}
+
+/* =========================================
+   KEYFRAMES
+========================================= */
+
+@keyframes shimmer {
+
+    from {
+
+        left: -120%;
+
+    }
+
+    to {
+
+        left: 150%;
+
+    }
+
+}
+
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(5, 5, 5, 0.75);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--border-color);
+
+    transition: var(--transition);
+
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    height: 80px;
+
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo img {
+
+    width: 180px;
+
+    transition: var(--transition);
+
+}
+
+.logo img:hover {
+
+    filter: drop-shadow(0 0 12px var(--primary-color));
+
+}
+
+/* =========================================
+   NAVIGATION MENU
+========================================= */
+
+.nav-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+}
+
+.nav-menu li {
+
+    position: relative;
+
+}
+
+.nav-menu a {
+
+    color: var(--text-color);
+
+    font-weight: 500;
+
+    transition: var(--transition);
+
+}
+
+/* =========================================
+   UNDERLINE ANIMATION
+========================================= */
+
+.nav-menu a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0%;
+
+    height: 2px;
+
+    background: var(--primary-color);
+
+    transition: var(--transition);
+
+    box-shadow: var(--shadow-medium);
+
+}
+
+.nav-menu a:hover::after,
+
+.nav-menu a.active::after {
+
+    width: 100%;
+
+}
+
+/* =========================================
+   NAVIGATION HOVER
+========================================= */
+
+.nav-menu a:hover {
+
+    color: var(--primary-color);
+
+    text-shadow: 0 0 10px var(--primary-color);
+
+}
+
+/* =========================================
+   ACTIVE MENU
+========================================= */
+
+.nav-menu a.active {
+
+    color: var(--primary-color);
+
+}
+
+/* =========================================
+   MENU TOGGLE
+========================================= */
+
+.menu-toggle {
+
+    display: none;
+
+    font-size: 2rem;
+
+    color: var(--text-color);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+.menu-toggle:hover {
+
+    color: var(--primary-color);
+
+    text-shadow: 0 0 15px var(--primary-color);
+
+}
+
+/* =========================================
+   HEADER SCROLL EFFECT
+========================================= */
+
+header.scrolled {
+
+    background: rgba(0, 0, 0, 0.92);
+
+    box-shadow: var(--shadow-medium);
+
+}
+
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.page-hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding-top: 120px;
+
+    background:
+        radial-gradient(circle at top right,
+        rgba(0,217,255,.12),
+        transparent 45%),
+        var(--primary-bg);
+
+    overflow: hidden;
+
+}
+
+.hero-container {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 70px;
+
+}
+
+.hero-content {
+
+    flex: 1;
+
+}
+
+.hero-badge {
+
+    display: inline-block;
+
+    padding: 10px 22px;
+
+    border-radius: 50px;
+
+    background: rgba(0,217,255,.10);
+
+    border: 1px solid var(--border-color);
+
+    color: var(--primary-color);
+
+    font-size: .9rem;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+
+    box-shadow: var(--shadow-light);
+
+}
+
+.hero-content h1 {
+
+    font-size: 4rem;
+
+    margin-bottom: 20px;
+
+}
+
+.hero-content h2 {
+
+    color: var(--primary-color);
+
+    margin-bottom: 25px;
+
+}
+
+.hero-content p {
+
+    max-width: 600px;
+
+    margin-bottom: 40px;
+
+}
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+.hero-image {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    position: relative;
+
+}
+
+.hero-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: rgba(0,217,255,.18);
+
+    filter: blur(90px);
+
+    animation: pulseGlow 4s ease-in-out infinite;
+
+}
+
+.hero-image img {
+
+    width: 420px;
+
+    position: relative;
+
+    z-index: 2;
+
+    filter: drop-shadow(0 0 30px rgba(0,217,255,.45));
+
+    transition: var(--transition);
+
+}
+
+.hero-image img:hover {
+
+    transform: scale(1.05);
+
+    filter: drop-shadow(0 0 50px rgba(0,217,255,.9));
+
+}
+
+/* =========================================
+   HERO FLOATING ANIMATION
+========================================= */
+
+.hero-image {
+
+    animation: floating 5s ease-in-out infinite;
+
+}
+
+/* =========================================
+   HERO TEXT ANIMATION
+========================================= */
+
+.hero-content {
+
+    animation: fadeUp 1.1s ease;
+
+}
+
+/* =========================================
+   KEYFRAMES
+========================================= */
+
+@keyframes floating {
+
+    0% {
+
+        transform: translateY(0px);
+
+    }
+
+    50% {
+
+        transform: translateY(-15px);
+
+    }
+
+    100% {
+
+        transform: translateY(0px);
+
+    }
+
+}
+
+@keyframes pulseGlow {
+
+    0% {
+
+        transform: scale(1);
+
+        opacity: .5;
+
+    }
+
+    50% {
+
+        transform: scale(1.1);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+        opacity: .5;
+
+    }
+
+}
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+/* =========================================
+   SECTION LAYOUT
+========================================= */
+
+.section {
+
+    position: relative;
+
+}
+
+.section-dark {
+
+    background: var(--secondary-bg);
+
+}
+
+.section-light {
+
+    background: #0d0d0d;
+
+}
+
+/* =========================================
+   GRID SYSTEM
+========================================= */
+
+.grid {
+
+    display: grid;
+
+    gap: 30px;
+
+}
+
+.grid-2 {
+
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.grid-3 {
+
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.grid-4 {
+
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+
+    position: relative;
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--border-radius);
+
+    padding: 35px;
+
+    overflow: hidden;
+
+    transition: var(--transition);
+
+    backdrop-filter: blur(18px);
+
+}
+
+/* =========================================
+   CARD SHIMMER
+========================================= */
+
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -150%;
+
+    left: -40%;
+
+    width: 70%;
+
+    height: 300%;
+
+    background: linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.18),
+
+        transparent
+
+    );
+
+    transform: rotate(25deg);
+
+    transition: .8s;
+
+}
+
+.card:hover::before {
+
+    left: 150%;
+
+}
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.card:hover {
+
+    transform: translateY(-12px);
+
+    border-color: var(--primary-color);
+
+    box-shadow: var(--shadow-heavy);
+
+}
+
+/* =========================================
+   CARD ICON
+========================================= */
+
+.card-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    background: rgba(0,217,255,.10);
+
+    color: var(--primary-color);
+
+    font-size: 28px;
+
+    box-shadow: var(--shadow-light);
+
+}
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.card h3 {
+
+    margin-bottom: 18px;
+
+    color: var(--text-color);
+
+}
+
+/* =========================================
+   CARD PARAGRAPH
+========================================= */
+
+.card p {
+
+    color: var(--text-secondary);
+
+}
+
+/* =========================================
+   FEATURE GRID
+========================================= */
+
+.features-grid,
+
+.use-grid,
+
+.contact-grid,
+
+.social-grid,
+
+.news-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+
+    gap: 30px;
+
+}
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+
+}
+
+.timeline-item {
+
+    display: flex;
+
+    gap: 30px;
+
+    align-items: flex-start;
+
+}
+
+.timeline-year {
+
+    min-width: 90px;
+
+    height: 90px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(0,217,255,.12);
+
+    border: 1px solid var(--border-color);
+
+    color: var(--primary-color);
+
+    font-weight: 700;
+
+    box-shadow: var(--shadow-medium);
+
+}
+
+.timeline-content {
+
+    flex: 1;
+
+    padding: 25px;
+
+    border-radius: var(--border-radius);
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--border-color);
+
+    transition: var(--transition);
+
+}
+
+.timeline-content:hover {
+
+    transform: translateX(8px);
+
+    box-shadow: var(--shadow-medium);
+
+}
+
+
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+.contact-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    max-width: 850px;
+
+    margin: auto;
+
+}
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.form-group label {
+
+    margin-bottom: 10px;
+
+    color: var(--text-color);
+
+    font-weight: 600;
+
+}
+
+.form-group input,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 16px 20px;
+
+    border-radius: var(--border-radius);
+
+    border: 1px solid var(--border-color);
+
+    background: rgba(255,255,255,.03);
+
+    color: var(--text-color);
+
+    font-family: inherit;
+
+    transition: var(--transition);
+
+}
+
+.form-group textarea {
+
+    resize: vertical;
+
+    min-height: 180px;
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+
+    outline: none;
+
+    border-color: var(--primary-color);
+
+    box-shadow: var(--shadow-medium);
+
+}
+
+/* =========================================
+   CTA SECTION
+========================================= */
+
+.cta {
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        rgba(0,217,255,.08),
+        rgba(0,119,255,.05)
+    );
+
+    border-top: 1px solid var(--border-color);
+
+    border-bottom: 1px solid var(--border-color);
+
+}
+
+.cta-content {
+
+    max-width: 800px;
+
+    margin: auto;
+
+}
+
+.cta-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    margin-top: 35px;
+
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    background: #050505;
+
+    border-top: 1px solid var(--border-color);
+
+}
+
+.footer-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 50px;
+
+    padding: 80px 0;
+
+}
+
+.footer-about img {
+
+    width: 170px;
+
+    margin-bottom: 20px;
+
+}
+
+.footer-links ul {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+.footer-links a {
+
+    color: var(--text-secondary);
+
+    transition: var(--transition);
+
+}
+
+.footer-links a:hover {
+
+    color: var(--primary-color);
+
+    padding-left: 8px;
+
+}
+
+.footer-contact p {
+
+    margin-bottom: 12px;
+
+}
+
+.footer-bottom {
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    text-align: center;
+
+    padding: 25px 0;
+
+}
+
+/* =========================================
+   GLASS EFFECT
+========================================= */
+
+.glass {
+
+    background: rgba(255,255,255,.05);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+}
+
+/* =========================================
+   GLOW EFFECT
+========================================= */
+
+.glow:hover {
+
+    box-shadow: var(--shadow-heavy);
+
+}
+
+/* =========================================
+   SPACING UTILITIES
+========================================= */
+
+.mt-1 { margin-top: 10px; }
+
+.mt-2 { margin-top: 20px; }
+
+.mt-3 { margin-top: 30px; }
+
+.mb-1 { margin-bottom: 10px; }
+
+.mb-2 { margin-bottom: 20px; }
+
+.mb-3 { margin-bottom: 30px; }
+
+.text-center {
+
+    text-align: center;
+
+}
+
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform: translateY(60px);
+
+    transition: all .8s ease;
+
+}
+
+.reveal.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+/* =========================================
+   HOVER ANIMATION
+========================================= */
+
+.card,
+.feature-card,
+.use-card,
+.contact-card,
+.social-card,
+.timeline-content {
+
+    transition: all .35s ease;
+
+}
+
+.card:hover,
+.feature-card:hover,
+.use-card:hover,
+.contact-card:hover,
+.social-card:hover,
+.timeline-content:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow: var(--shadow-heavy);
+
+}
+
+/* =========================================
+   IMAGE EFFECT
+========================================= */
+
+img {
+
+    transition: .4s ease;
+
+}
+
+img:hover {
+
+    transform: scale(1.02);
+
+}
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 992px) {
+
+    .navbar {
+
+        height: 75px;
+
+    }
+
+    .menu-toggle {
+
+        display: block;
+
+    }
+
+    .nav-menu {
+
+        position: fixed;
+
+        top: 75px;
+
+        left: -100%;
+
+        width: 100%;
+
+        background: rgba(5,5,5,.98);
+
+        backdrop-filter: blur(20px);
+
+        flex-direction: column;
+
+        padding: 40px;
+
+        gap: 30px;
+
+        transition: .4s ease;
+
+    }
+
+    .nav-menu.active {
+
+        left: 0;
+
+    }
+
+    .hero-container {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    .hero-buttons {
+
+        justify-content: center;
+
+    }
+
+    .footer-container {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* =========================================
+   MOBILE PHONE
+========================================= */
+
+@media (max-width:768px){
+
+    h1{
+
+        font-size:2.6rem;
+
+    }
+
+    h2{
+
+        font-size:2rem;
+
+    }
+
+    .hero-image img{
+
+        width:280px;
+
+    }
+
+    section{
+
+        padding:70px 0;
+
+    }
+
+    .timeline-item{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .timeline-year{
+
+        width:70px;
+
+        height:70px;
+
+        min-width:70px;
+
+    }
+
+}
+
+/* =========================================
+   SMALL DEVICE
+========================================= */
+
+@media (max-width:480px){
+
+    .container{
+
+        width:92%;
+
+    }
+
+    .btn-primary,
+    .btn-secondary{
+
+        width:100%;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+}
+
+/* =========================================
+   GLOW ANIMATION
+========================================= */
+
+@keyframes neonGlow{
+
+    0%{
+
+        box-shadow:0 0 5px rgba(0,217,255,.2);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 20px rgba(0,217,255,.7),
+        0 0 40px rgba(0,217,255,.4);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 5px rgba(0,217,255,.2);
+
+    }
+
+}
+
+.btn-primary{
+
+    animation:neonGlow 3s infinite;
+
+}
+
+/* =========================================
+   FLOAT ICON
+========================================= */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.card-icon{
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+/* =========================================
+   END OF FILE
+========================================= */
+
+
+/* =========================================
+   PREMIUM EFFECT
+========================================= */
+
+/* Smooth Page */
+
+body{
+
+    animation:pageFade .8s ease;
+
+}
+
+/* Glass Card */
+
+.card,
+.status-card,
+.news-card,
+.founder-card{
+
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(0,217,255,.15);
+
+}
+
+/* Neon Border */
+
+.card:hover,
+.status-card:hover,
+.news-card:hover,
+.founder-card:hover{
+
+    border-color:var(--primary-color);
+
+    box-shadow:
+    0 0 15px rgba(0,217,255,.3),
+    0 0 35px rgba(0,217,255,.15);
+
+}
+
+/* Section Fade */
+
+section{
+
+    animation:sectionFade .8s ease;
+
+}
+
+/* Image Glow */
+
+.hero-image img,
+.about-image img,
+.footer-logo{
+
+    transition:.4s ease;
+
+}
+
+.hero-image img:hover,
+.about-image img:hover,
+.footer-logo:hover{
+
+    filter:
+
+    drop-shadow(0 0 25px rgba(0,217,255,.6));
+
+}
+
+/* Title Glow */
+
+.section-title h2{
+
+    transition:.3s;
+
+}
+
+.section-title h2:hover{
+
+    text-shadow:
+
+    0 0 12px rgba(0,217,255,.8);
+
+}
+
+/* Button Press */
+
+.btn-primary:active,
+.btn-secondary:active{
+
+    transform:scale(.97);
+
+}
+
+/* Scrollbar Glow */
+
+::-webkit-scrollbar-thumb{
+
+    box-shadow:
+
+    0 0 12px rgba(0,217,255,.7);
+
+}
+
+/* Keyframes */
+
+@keyframes pageFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes sectionFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
